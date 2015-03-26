@@ -1,0 +1,12 @@
+diff -urN kpeople-5.8.0/CMakeLists.txt kpeople-5.8.0-patched/CMakeLists.txt
+--- kpeople-5.8.0/CMakeLists.txt	2015-03-13 18:07:30.000000000 +1000
++++ kpeople-5.8.0-patched/CMakeLists.txt	2015-03-26 17:59:25.333327591 +1000
+@@ -30,7 +30,7 @@
+ include(KDEFrameworkCompilerSettings)
+ include(KDECMakeSettings)
+ 
+-add_definitions(-DTRANSLATION_DOMAIN=\"libkpeople\")
++add_definitions(-DTRANSLATION_DOMAIN=\"libkpeople5\")
+ 
+ set(CMAKECONFIG_INSTALL_DIR "${CMAKECONFIG_INSTALL_PREFIX}/KF5People")
+ 
