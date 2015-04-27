@@ -148,10 +148,9 @@ based on %{name}.
 
 %prep
 %setup -q
-
+%cmake_kde5
 
 %build
-%cmake_kde5
 %ninja -C build
 
 %install
