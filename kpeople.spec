@@ -14,11 +14,11 @@ BuildRequires:	cmake(KF5Service)
 BuildRequires:	cmake(KF5WidgetsAddons)
 BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5ItemViews)
-BuildRequires:	pkgconfig(Qt5Gui
-BuildRequires:	pkgconfig(Qt5Sql
-BuildRequires:	pkgconfig(Qt5DBus
-BuildRequires:	pkgconfig(Qt5Widgets
-BuildRequires:	pkgconfig(Qt5Qml
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Sql)
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Qml)
 
 %description
 KDE Frameworks 5 people contacts module.
