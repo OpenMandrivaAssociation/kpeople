@@ -1,29 +1,24 @@
-%define fw_version 5.8
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	KDE Frameworks 5 people contacts module
 Name:		kpeople
-Version:	5.8.0
+Version:	5.9.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/frameworks/%{fw_version}/%{name}-%{version}.tar.xz
-Patch0:		kpeople-5.8.0-rename-translations.patch
-BuildRequires:	extra-cmake-modules
-BuildRequires:	kf5coreaddons-devel >= %{version}
-BuildRequires:	kf5i18n-devel >= %{version}
-BuildRequires:	kf5itemviews-devel >= %{version}
-BuildRequires:	kf5service-devel >= %{version}
-BuildRequires:	kf5widgetsaddons-devel >= %{version}
-BuildRequires:	pkgconfig(Qt5Core)
-BuildRequires:	pkgconfig(Qt5DBus)
-BuildRequires:	pkgconfig(Qt5Gui)
-BuildRequires:	pkgconfig(Qt5Network)
-BuildRequires:	pkgconfig(Qt5Qml)
-BuildRequires:	pkgconfig(Qt5Quick)
-BuildRequires:	pkgconfig(Qt5Sql)
-BuildRequires:	pkgconfig(Qt5Test)
-BuildRequires:	pkgconfig(Qt5Widgets)
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(KF5CoreAddons)
+BuildRequires:	cmake(KF5Service)
+BuildRequires:	cmake(KF5WidgetsAddons)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5ItemViews)
+BuildRequires:	pkgconfig(Qt5Gui
+BuildRequires:	pkgconfig(Qt5Sql
+BuildRequires:	pkgconfig(Qt5DBus
+BuildRequires:	pkgconfig(Qt5Widgets
+BuildRequires:	pkgconfig(Qt5Qml
 
 %description
 KDE Frameworks 5 people contacts module.
@@ -136,7 +131,6 @@ Requires:	%{libkf5people} = %{EVRD}
 Requires:	%{libkf5peoplebackend} = %{EVRD}
 Requires:	%{libkf5peoplewidgets} = %{EVRD}
 Provides:	%{name}-devel = %{EVRD}
-Provides:	kf5people-devel = %{version}
 
 %description -n %{devkf5people}
 This package contains header files needed if you wish to build applications
@@ -154,19 +148,13 @@ based on %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
 
-for oldlang in po/*/*.po
-do
-    newlang=`echo $oldlang | sed s,\.po,5\.po,g`
-    mv $oldlang $newlang
-done
 
 %build
 %cmake_kde5
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
 
 %find_lang libkpeople5
