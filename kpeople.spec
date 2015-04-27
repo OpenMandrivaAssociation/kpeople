@@ -142,7 +142,7 @@ based on %{name}.
 %{_libdir}/libKF5People.so
 %{_libdir}/libKF5PeopleBackend.so
 %{_libdir}/libKF5PeopleWidgets.so
-%{_kde5_mkspecsdir}/*.pri
+%{_libdir}/qt5/mkspecs/modules/*.pri
 
 #----------------------------------------------------------------------------
 
