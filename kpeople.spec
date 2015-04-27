@@ -33,10 +33,10 @@ The sources are plugin-based, allowing to easily extend the contacts
 collection.
 
 %files
-%{_kde5_datadir}/kf5/kpeople/dummy_avatar.png
-%{_kde5_servicetypes}/kpeople_data_source.desktop
-%{_kde5_servicetypes}/kpeople_plugin.desktop
-%{_kde5_servicetypes}/persondetailsplugin.desktop
+%{_datadir}/kf5/kpeople/dummy_avatar.png
+%{_datadir}/kservicetypes5/kpeople_data_source.desktop
+%{_datadir}/kservicetypes5/kpeople_plugin.desktop
+%{_datadir}/kservicetypes5/persondetailsplugin.desktop
 
 #----------------------------------------------------------------------------
 
@@ -63,8 +63,9 @@ Provides:	KF5People-qml = %{EVRD}
 QML plugin for KDE Frameworks 5 KPeople.
 
 %files -n %{qmlKF5People}
-%dir %{_kde5_qmldir}/org/kde/people/
-%{_kde5_qmldir}/org/kde/people/*
+%dir %{_libdir}/qt5/qml/org/kde/people
+%{_libdir}/qt5/qml/org/kde/people/libKF5PeopleDeclarative.so
+%{_libdir}/qt5/qml/org/kde/people/qmldir
 
 #----------------------------------------------------------------------------
 
@@ -82,7 +83,7 @@ Requires:	%{qmlKF5People} = %{EVRD}
 KDE Frameworks 5 people contacts shared library.
 
 %files -n %{libKF5People}
-%{_kde5_libdir}/libKF5People.so.%{KF5People_major}*
+%{_libdir}/libKF5People.so.%{KF5People_major}*
 
 #----------------------------------------------------------------------------
 
@@ -100,7 +101,7 @@ Requires:	%{qmlKF5People} = %{EVRD}
 KDE Frameworks 5 people contacts shared library.
 
 %files -n %{libKF5PeopleBackend}
-%{_kde5_libdir}/libKF5PeopleBackend.so.%{KF5PeopleBackend_major}*
+%{_libdir}/libKF5PeopleBackend.so.%{KF5PeopleBackend_major}*
 
 #----------------------------------------------------------------------------
 
@@ -118,7 +119,7 @@ Requires:	%{qmlKF5People} = %{EVRD}
 KDE Frameworks 5 people contacts shared library.
 
 %files -n %{libKF5PeopleWidgets}
-%{_kde5_libdir}/libKF5PeopleWidgets.so.%{KF5PeopleWidgets_major}*
+%{_libdir}/libKF5PeopleWidgets.so.%{KF5PeopleWidgets_major}*
 
 #----------------------------------------------------------------------------
 
@@ -136,11 +137,11 @@ This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files -n %{devKF5People}
-%{_kde5_includedir}/KF5/KPeople
-%{_kde5_libdir}/cmake/KF5People
-%{_kde5_libdir}/libKF5People.so
-%{_kde5_libdir}/libKF5PeopleBackend.so
-%{_kde5_libdir}/libKF5PeopleWidgets.so
+%{_includedir}/KF5/KPeople
+%{_libdir}/cmake/KF5People
+%{_libdir}/libKF5People.so
+%{_libdir}/libKF5PeopleBackend.so
+%{_libdir}/libKF5PeopleWidgets.so
 %{_kde5_mkspecsdir}/*.pri
 
 #----------------------------------------------------------------------------
