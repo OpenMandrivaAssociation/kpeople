@@ -48,95 +48,94 @@ BuildArch:	noarch
 %description i18n
 KPeople translations.
 
-%files i18n -f libkpeople5.lang
+%files i18n -f libkpeople.lang
 
 #----------------------------------------------------------------------------
 
-%define qmlkf5people %mklibname kf5people-qml
+%define qmlKF5People %mklibname KF5People-qml
 
-%package -n %{qmlkf5people}
+%package -n %{qmlKF5People}
 Summary:	QML plugin for KDE Frameworks 5 KPeople
 Group:		System/Libraries
-Provides:	kf5people-qml = %{EVRD}
+Provides:	KF5People-qml = %{EVRD}
 
-%description -n %{qmlkf5people}
+%description -n %{qmlKF5People}
 QML plugin for KDE Frameworks 5 KPeople.
 
-%files -n %{qmlkf5people}
+%files -n %{qmlKF5People}
 %dir %{_kde5_qmldir}/org/kde/people/
 %{_kde5_qmldir}/org/kde/people/*
 
 #----------------------------------------------------------------------------
 
-%define kf5people_major 5
-%define libkf5people %mklibname kf5people %{kf5people_major}
+%define KF5People_major 5
+%define libKF5People %mklibname KF5People %{KF5People_major}
 
-%package -n %{libkf5people}
+%package -n %{libKF5People}
 Summary:	KDE Frameworks 5 people contacts shared library
 Group:		System/Libraries
-Requires:	%{name}
-Requires:	%{name}-i18n
-Requires:	%{qmlkf5people}
+Requires:	%{name} = %{EVRD}
+Requires:	%{name}-i18n = %{EVRD}
+Requires:	%{qmlKF5People} = %{EVRD}
 
-%description -n %{libkf5people}
+%description -n %{libKF5People}
 KDE Frameworks 5 people contacts shared library.
 
-%files -n %{libkf5people}
-%{_kde5_libdir}/libKF5People.so.%{kf5people_major}*
+%files -n %{libKF5People}
+%{_kde5_libdir}/libKF5People.so.%{KF5People_major}*
 
 #----------------------------------------------------------------------------
 
-%define kf5peoplebackend_major 5
-%define libkf5peoplebackend %mklibname kf5peoplebackend %{kf5peoplebackend_major}
+%define KF5PeopleBackend_major 5
+%define libKF5PeopleBackend %mklibname KF5PeopleBackend %{KF5PeopleBackend_major}
 
-%package -n %{libkf5peoplebackend}
+%package -n %{libKF5PeopleBackend}
 Summary:	KDE Frameworks 5 people contacts shared library
 Group:		System/Libraries
-Requires:	%{name}
-Requires:	%{name}-i18n
-Requires:	%{qmlkf5people}
+Requires:	%{name} = %{EVRD}
+Requires:	%{name}-i18n = %{EVRD}
+Requires:	%{qmlKF5People} = %{EVRD}
 
-%description -n %{libkf5peoplebackend}
+%description -n %{libKF5PeopleBackend}
 KDE Frameworks 5 people contacts shared library.
 
-%files -n %{libkf5peoplebackend}
-%{_kde5_libdir}/libKF5PeopleBackend.so.%{kf5peoplebackend_major}*
+%files -n %{libKF5PeopleBackend}
+%{_kde5_libdir}/libKF5PeopleBackend.so.%{KF5PeopleBackend_major}*
 
 #----------------------------------------------------------------------------
 
-%define kf5peoplewidgets_major 5
-%define libkf5peoplewidgets %mklibname kf5peoplewidgets %{kf5peoplewidgets_major}
+%define KF5PeopleWidgets_major 5
+%define libKF5PeopleWidgets %mklibname KF5PeopleWidgets %{KF5PeopleWidgets_major}
 
-%package -n %{libkf5peoplewidgets}
+%package -n %{libKF5PeopleWidgets}
 Summary:	KDE Frameworks 5 people contacts shared library
 Group:		System/Libraries
-Requires:	%{name}
-Requires:	%{name}-i18n
-Requires:	%{qmlkf5people}
+Requires:	%{name} = %{EVRD}
+Requires:	%{name}-i18n = %{EVRD}
+Requires:	%{qmlKF5People} = %{EVRD}
 
-%description -n %{libkf5peoplewidgets}
+%description -n %{libKF5PeopleWidgets}
 KDE Frameworks 5 people contacts shared library.
 
-%files -n %{libkf5peoplewidgets}
-%{_kde5_libdir}/libKF5PeopleWidgets.so.%{kf5peoplewidgets_major}*
+%files -n %{libKF5PeopleWidgets}
+%{_kde5_libdir}/libKF5PeopleWidgets.so.%{KF5PeopleWidgets_major}*
 
 #----------------------------------------------------------------------------
 
-%define devkf5people %mklibname kf5people -d
+%define devKF5People %mklibname KF5People -d
 
-%package -n %{devkf5people}
+%package -n %{devKF5People}
 Summary:	Development files for KDE Frameworks 5 people contacts module
 Group:		Development/KDE and Qt
-Requires:	%{libkf5people} = %{EVRD}
-Requires:	%{libkf5peoplebackend} = %{EVRD}
-Requires:	%{libkf5peoplewidgets} = %{EVRD}
-Provides:	%{name}-devel = %{EVRD}
+Requires:	%{libKF5People} = %{EVRD}
+Requires:	%{libKF5PeopleBackend} = %{EVRD}
+Requires:	%{libKF5PeopleWidgets} = %{EVRD}
 
-%description -n %{devkf5people}
+%description -n %{devKF5People}
 This package contains header files needed if you wish to build applications
 based on %{name}.
 
-%files -n %{devkf5people}
+%files -n %{devKF5People}
 %{_kde5_includedir}/KF5/KPeople
 %{_kde5_libdir}/cmake/KF5People
 %{_kde5_libdir}/libKF5People.so
@@ -156,4 +155,4 @@ based on %{name}.
 %install
 %ninja_install -C build
 
-%find_lang libkpeople5
+%find_lang libkpeople
