@@ -48,7 +48,7 @@ BuildArch:	noarch
 %description i18n
 KPeople translations.
 
-%files i18n -f libkpeople.lang
+%files i18n -f kpeople5.lang
 
 #----------------------------------------------------------------------------
 
@@ -156,4 +156,4 @@ based on %{name}.
 %install
 %ninja_install -C build
 
-%find_lang libkpeople
+%find_lang kpeople5
