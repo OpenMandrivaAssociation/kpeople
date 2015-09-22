@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   kpeople-5.13.0.tar.xz: cb24df49524fa369e75f6011fa705699d0f5e918
+sources:
+  kpeople-5.14.0.tar.xz: 735e44a952383d0168fbcc92e53fd75ba87835fb
