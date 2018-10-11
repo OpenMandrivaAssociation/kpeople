@@ -2,7 +2,7 @@
 
 Summary:	KDE Frameworks 5 people contacts module
 Name:		kpeople
-Version:	5.50.0
+Version:	5.51.0
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -35,6 +35,7 @@ The sources are plugin-based, allowing to easily extend the contacts
 collection.
 
 %files
+%{_sysconfdir}/xdg/kpeople.categories
 %{_datadir}/kf5/kpeople/dummy_avatar.png
 %{_datadir}/kservicetypes5/kpeople_data_source.desktop
 %{_datadir}/kservicetypes5/kpeople_plugin.desktop
