@@ -2,8 +2,8 @@
 
 Summary:	KDE Frameworks 5 people contacts module
 Name:		kpeople
-Version:	5.56.0
-Release:	2
+Version:	5.57.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
@@ -21,6 +21,8 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Qml)
 BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Test)
+# For QCH format docs
+BuildRequires: qt5-assistant
 
 %description
 KDE Frameworks 5 people contacts module.
@@ -147,6 +149,17 @@ based on %{name}.
 %{_libdir}/libKF5PeopleWidgets.so
 %{_libdir}/qt5/mkspecs/modules/*.pri
 
+#----------------------------------------------------------------------------
+%package -n %{name}-devel-docs
+Summary: Developer documentation for %{name} for use with Qt Assistant
+Group: Documentation
+Suggests: %{devKF5People} = %{EVRD}
+
+%description -n %{name}-devel-docs
+Developer documentation for %{name} for use with Qt Assistant
+
+%files -n %{name}-devel-docs
+%{_docdir}/qt5/*.{tags,qch}
 #----------------------------------------------------------------------------
 
 %prep
