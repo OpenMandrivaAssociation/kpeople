@@ -23,6 +23,7 @@ BuildRequires:	pkgconfig(Qt5Quick)
 BuildRequires:	pkgconfig(Qt5Test)
 # For QCH format docs
 BuildRequires: qt5-assistant
+BuildRequires: doxygen
 
 %description
 KDE Frameworks 5 people contacts module.
