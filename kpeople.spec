@@ -2,8 +2,8 @@
 
 Summary:	KDE Frameworks 5 people contacts module
 Name:		kpeople
-Version:	5.67.0
-Release:	3
+Version:	5.68.0
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/
